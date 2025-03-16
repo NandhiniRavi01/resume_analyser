@@ -63,7 +63,7 @@ pipeline {
                     // Example test for the frontend React app
                     echo 'Running frontend tests...'
                     // Test if the React app is running on port 3000
-                    sh 'curl --fail http://34.56.252.198:3000 || exit 1'
+                    sh 'curl --fail http://localhost:3000 || exit 1'
                 }
             }
         }
@@ -73,13 +73,13 @@ pipeline {
                 script {
                     // Example test for the backend API apps
                     echo 'Running backend tests...'
-                    sh 'curl --fail http://34.56.252.198:5001/signup || exit 1'
-                     sh 'curl --fail http://34.56.252.198:5001/login || exit 1'
-                    sh 'curl --fail http://34.56.252.198:5001/protected || exit 1'
+                    sh 'curl --fail http://localhost:5001/signup || exit 1'
+                     sh 'curl --fail http://localhost:5001/login || exit 1'
+                    sh 'curl --fail http://localhost:5001/protected || exit 1'
                     // Test the app service (running on port 5000)
-                    sh 'curl --fail http://34.56.252.198:5000/download/<filename> || exit 1'
-                     sh 'curl --fail http://34.56.252.198:5000/upload || exit 1'
-                    sh 'curl --fail http://34.56.252.198:5000 || exit 1'
+                    sh 'curl --fail http://localhost:5000/download/<filename> || exit 1'
+                     sh 'curl --fail http://localhost:5000/upload || exit 1'
+                    sh 'curl --fail http://localhost:5000 || exit 1'
                     // Test the server service (running on port 5001)
                     
                 }
